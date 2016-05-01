@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Lager</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, user-scalable=no, maximum-scale=1.0"/>
 	<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
 	<script src="/picker.js"></script>
@@ -38,12 +38,12 @@
 			background: #ddd;
 		}
 
-		table {
+		table.mobile {
 			width:      100%;
 			text-align: left;
 		}
 
-		table td, table th {
+		table.mobile td, table.mobile th {
 			padding: 4px;
 		}
 
@@ -87,21 +87,21 @@
 		}
 
 		@media all and (max-width: 991px) {
-			table thead {
+			table.mobile thead {
 				display: none;
 			}
 
-			table tr {
+			table.mobile tr {
 				display:       block;
 				padding:       20px 5px;
 				border-bottom: 1px solid #ccc;
 			}
 
-			table tr td {
+			table.mobile tr td {
 				display: block;
 			}
 
-			table tr td:before {
+			table.mobile tr td:before {
 				display:   block;
 				font-size: 12px;
 				color:     #777;
@@ -133,7 +133,7 @@
 	{{ csrf_field() }}
 </form>
 <hr/>
-<table>
+<table class="mobile">
 	<thead>
 	<tr>
 		<th>Produkt</th>
@@ -164,7 +164,7 @@
 	<div class="popup">
 		<a href="#" class="close" style="float: right;" data-popup="#popup-show">X</a>
 		<h2>Alle <span data-bind="name">...</span></h2>
-		<table>
+		<table class="mobile">
 			<thead>
 				<th>Mængde</th>
 				<th>Udløb</th>
